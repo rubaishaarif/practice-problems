@@ -1,0 +1,16 @@
+//print elements of array in reverse order
+#include <stdio.h>
+int main() {
+   int arr[5];
+   int i;
+   printf("enter array elements\n");
+   for(i=0;i<5;i++)
+   {
+       printf("Enter elements %d\n",i+1);
+       scanf("%d",&arr[i]);
+   }
+   for(i=4;i>=0;i--)
+   {
+       printf("[%d] = %d\n",i,arr[i]);
+   }
+    return 0;
