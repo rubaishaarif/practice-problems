@@ -1,0 +1,23 @@
+#include <stdio.h>
+int main() {
+int arm=0,sum=0, r;
+int n;
+printf("Enter number :");
+scanf("%d",&n);
+int c=n;
+while (n>0) //153
+{
+    r = n % 10; //3,5,1
+arm = (r*r*r); //27,125,1
+sum += arm; //27+125+1
+n = n/10;//15,1,0
+}
+if(c==sum)
+{
+    printf("armstrong"); }
+    else
+    {
+        printf("Not armstrong"); 
+    }
+    return 0;
+}
