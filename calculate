@@ -1,0 +1,18 @@
+#include <stdio.h>
+void calculate(int a, int b)
+{
+   int sum = a+b;
+   int product = a*b;
+    printf("sum = %d\n",sum);
+    printf("product = %d\n",product);
+}
+int main() {
+  int first,second;
+  printf("enter 1st num : ");
+  scanf("%d",&first);
+  printf("enter 2nd num : ");
+  scanf("%d",&second);
+  calculate(first,second);
+  printf("average = %d",(first+second)/2);
+    return 0;
+}
