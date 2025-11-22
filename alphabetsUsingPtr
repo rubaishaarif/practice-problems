@@ -1,0 +1,17 @@
+// print english alphabets using pointer
+#include <stdio.h>
+void letters(char *n)
+{
+    *n='a';
+    for(int i=0;i<26;i++)
+    {
+    printf("%c\n",*n); 
+        (*n)++;
+    } }
+
+int main() {
+  char ch;
+  letters(&ch);
+
+    return 0;
+}
