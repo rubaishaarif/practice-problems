@@ -1,0 +1,28 @@
+// count number of odd nums in array
+#include <stdio.h>
+void odd(int arr[],int n)
+{
+    int count=0,i;
+
+for(i=0;i<n;i++)
+{
+    printf("enter %d elements :",i+1);
+    scanf("%d",&arr[i]);
+}
+for(i=0;i<n;i++)
+{
+    printf("%d\t",arr[i]);
+   if(arr[i]%2!=0)
+   count++;
+}
+printf("count to odd num = %d",count);
+}
+int main() {
+int size;
+printf("enter size of array : ");
+scanf("%d",&size);
+int a[size];
+odd(a,size);
+
+    return 0;
+}
