@@ -1,0 +1,21 @@
+//n terms of fibonacci sequence
+#include <stdio.h>
+void fib(int n);
+int main() {
+   int num;
+      printf("Enter number of terms in fibonacci series : ");
+    scanf("%d",&num);
+fib(num);
+    return 0;
+}
+void fib(int n)
+{
+    int next=0,a=0,b=1;
+ 
+    for(int i=0;i<n;i++)
+    {
+        printf("%d\n",a); 
+        next=a+b; 
+        a=b; 
+        b=next; 
+    }
