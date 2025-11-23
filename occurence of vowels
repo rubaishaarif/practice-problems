@@ -1,0 +1,22 @@
+//count occurence of vowel in string
+#include <stdio.h>
+void vowel(char str[])
+{
+    int count=0,i;
+    for(i=0;str[i]!='\0';i++)
+    {
+        if(str[i]=='a' || str[i]=='e' || str[i]=='i'|| str[i]=='o'|| str[i]=='u')
+        
+       count++;
+    }
+    printf("%d",count);
+}
+int main() {
+   char a[40];
+   printf("enter string : ");
+   fgets(a,40,stdin);
+   puts(a);
+   vowel(a);
+
+    return 0;
+}
