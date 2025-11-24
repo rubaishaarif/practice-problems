@@ -1,0 +1,54 @@
+//print lowest GPA and student living in input city
+#include<stdio.h>
+#include<string.h>
+
+struct address{
+	
+	char city[15];
+	char state[15];
+	int street;
+	int zip; };
+	
+	struct course{
+	char name[16];
+	float GPA;	
+	};
+	struct student{
+		struct address add;
+		struct course c;
+	};
+	int main()
+	{
+		struct student s[5];
+		int i;
+		float min=4.1;
+		int low=-1;
+		for(i=0;i<5;i++)  //details
+		{
+			printf("STUDENT %d\n",i+1);
+			printf("Course : ");
+			scanf("%s",s[i].c.name);
+			printf("GPA : ");
+			scanf("%f",&s[i].c.GPA);
+			printf("Address(city \t state \t street \t zip) : ");
+			scanf("%s %s %d %d",s[i].add.city, s[i].add.state, &s[i].add.street, &s[i].add.zip);
+
+			for(i=0;i<5;i++)   //lowest GPA
+		{
+			if(s[i].c.GPA<min){
+			
+			min=s[i].c.GPA;
+			low=i; }
+		}
+		printf("student %d has lowest GPA\n ",low+1);
+		char city1[20];
+		printf("enter city : ");
+		scanf("%s",city1);
+		    for(i=0;i<5;i++)  //check city
+		{
+			if(strcmp(city1, s[i].add.city)==0)
+			printf("student %d lives in %s city\n",i+1,city1);
+		}
+		
+	}
+	return 0; }
