@@ -1,0 +1,54 @@
+//check largest real and imaginary part
+#include<stdio.h>
+struct complex{
+	float real;
+	float imag;
+};
+
+void readc(struct complex num[3]);
+void real(struct complex num[3]);
+void imag(struct complex num[3]);
+int main()
+{
+	struct complex num[3];
+	int i;
+	readc(num);
+	real(num);
+	imag(num);
+	return 0;
+}
+void readc(struct complex num[3])
+{
+	
+	for(int i=0;i<3;i++)
+	{
+		printf("number %d : ",i+1);
+		printf("real number : ");
+		scanf("%f",&num[i].real);
+		printf("imag number : ");
+		scanf("%f",&num[i].imag);
+	}
+}
+void real(struct complex num[3])
+{
+	float largest = num[0].real;
+		for(int i=1;i<3;i++)
+	{ 
+	if(num[i].real>largest)
+	largest = num[i].real;
+}
+	printf("largest real part = %f\n",largest);
+
+}
+void imag(struct complex num[3])
+{
+	float largest = num[0].imag;
+		for(int i=1;i<3;i++)
+	{ 
+	if(num[i].imag>largest)
+	largest = num[i].imag;
+}
+	printf("largest imag part = %fi\n",largest);
+
+}
+
