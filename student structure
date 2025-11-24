@@ -1,0 +1,60 @@
+#include<stdio.h>
+struct courses{
+	char coursename;
+	float GPA;
+};
+struct address{
+	int street;
+	char city[15];
+	char state[15];
+	int zip;
+};
+struct student{
+	float CGPA;
+	struct courses c[2];
+	struct address add;
+};
+int main()
+{
+	struct student s1;
+	struct student s2;
+	int i;
+	printf("Details of student 1\n"); //student 1
+	printf("CGPA : ");
+	scanf("%f",&s1.CGPA);
+	for(i=0;i<2;i++)
+	{
+		printf("Course 1 : ");
+		scanf("%s",s1.c[i].coursename);
+		printf("GPA : ");
+		scanf("%s",s1.c[i].GPA);
+	}
+	printf("Enter Address(street, city, state, zip) : ");
+	scanf("%d %s %s %d",&s1.add.street, s1.add.city, s1.add.state, &s1.add.zip);
+	
+	printf("Details of student 2\n"); //stduent 2
+	printf("CGPA : ");
+	scanf("%f",&s2.CGPA);
+	for(i=0;i<2;i++)
+	{
+		printf("Course 2 : ");
+		scanf("%s",s2.c[i].coursename);
+		printf("GPA : ");
+		scanf("%s",s2.c[i].GPA);
+	}
+	printf("Enter Address(street, city, state, zip) : ");
+	scanf("%d %s %s %d",&s2.add.street, s2.add.city, s2.add.state, &s2.add.zip);
+	
+	for(i=0;i<2;i++)
+	{
+		if(s1.c[i].GPA > s2.c[i].GPA)
+		printf("Student 1 has higher GPA in %s course\n",s1.c[i].coursename);
+		else if(s2.c[i].GPA > s1.c[i].GPA)
+		printf("Student 2 has higher GPA in %s course\n",s2.c[i].coursename);
+	}
+	if(s1.CGPA > s2.CGPA)
+	printf("Student 1 has higher CGPA");
+	else if(s2.CGPA > s1.CGPA)
+	printf("Student 2 has higher CGPA");
+	return 0;
+}
