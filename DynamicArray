@@ -1,0 +1,67 @@
+#include <iostream>
+using namespace std;
+class Darray{
+    int *p;
+    int Csize, Msize;
+    void resize()
+    {
+        Msize = (Msize==0)? 1: 2*Msize;
+        int *temp;
+        temp = new int[Msize];
+        for( int i=0;i<Csize;i++)
+        {
+            temp[i] = p[i];
+        }
+        delete[] p;
+        p = temp;
+    }
+    public:
+    Darray(int s=1)
+    {
+        Csize = 0;
+        Msize = s;
+        p = new int[Msize];
+}
+bool empty()
+    {
+        return(Csize == 0);
+    }
+    bool full()
+    {
+        return(Csize == Msize); }
+    void push(int v)
+    {
+        if(full())
+        {
+            resize();
+        }
+        p[Csize] = v;
+        Csize++;
+    }
+
+    void pop(int v)
+    {
+        if(!empty())
+  
+        Csize--;
+    }
+        int& operator[](int index)
+    {
+        return p[index];
+    }
+
+};
+int main() {
+    Darray arr(2);  
+
+    arr.push(10);
+    arr.push(20);
+    arr.push(30);   
+
+    arr.pop(10);
+    cout<<arr[2]<<endl;
+    arr[2] =80;
+    cout<<arr[2]<<endl;
+    
+    return 0;
+}
