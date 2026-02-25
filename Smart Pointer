@@ -1,0 +1,47 @@
+//Quiz question
+// Implement a SmartPointer class that manages a dynamically allocated integer
+// int* ptr, static int objectCount;
+// Constructor , destructor 
+//  setValue(int val) 
+//  getValue() const 
+//  Static function getCount() 
+
+#include <iostream>
+using namespace std;
+
+class SmartPtr{
+    int *ptr;
+    static int objCount;
+    public:
+    SmartPtr(int p){
+        ptr = new int( p);
+        objCount++;
+    }
+    void set(int val)
+    {
+        *ptr = val;
+    }
+    int get()
+    const {
+        return *ptr;
+    }
+    static int getCount()
+    {
+        return objCount;
+    }
+
+    ~SmartPtr()
+    {
+        delete ptr;
+        objCount--;
+        cout<<"Destructor\n";
+    }
+};
+int SmartPtr::objCount = 0;
+int main() {
+SmartPtr s(5);
+s.set(40);
+cout<<"value : "<<s.get()<<endl;
+cout<<"count : "<<s.getCount()<<endl;
+    return 0;
+}
