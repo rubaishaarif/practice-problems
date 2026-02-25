@@ -1,0 +1,72 @@
+//Quiz question
+//Design a BankAccount class with the following specifications:
+// Data members: accountNumber, accountHolderName, balance, totalAccounts
+// Methods : Parameterized constructor, deposit(), withdraw(), getBalance(),
+// getTotalAccounts()
+// Write a complete class implementation with proper encapsulation and use of const and
+// static keywords if applicable.
+#include <iostream>
+#include<cstring>
+using namespace std; 
+class BankAccount{
+    int accNum;
+    static int totalAcc;
+    string name;
+    float balance;
+    public:
+    BankAccount(int num, string n, float b )
+    {
+        accNum = num;
+        name = n;
+        balance = b;
+        totalAcc++;
+        }
+    void deposit(float d)
+    {
+        balance = balance + d;
+    }
+    void  withdraw(float w)
+    {
+        if(w>balance)
+        {
+            cout<<"Insufficient balance\n";
+        }
+        balance = balance - w;
+       
+    }
+    float getBalance()
+    {
+         return balance;
+    }
+    int getTotalAcc()
+    {
+        return totalAcc;
+    }
+    void print()
+    {
+       cout<<"total balance : "<<balance<<endl;
+       cout<<"Current balance: "<<getBalance()<<endl;
+       cout<<"total Acc: "<<getTotalAcc()<<endl;
+       cout<<endl;
+    }
+    
+    
+    
+    
+};
+int BankAccount::totalAcc = 0;
+int main() {
+BankAccount b1(123, "ali", 1200.90);
+b1.deposit(50);
+b1.print();
+b1.withdraw(100);
+b1.print();
+cout<<endl;
+BankAccount b2(166, "raahim", 1600.90);
+b2.deposit(10);
+b2.print();
+b2.withdraw(200);
+b2.print();
+
+    return 0;
+}
