@@ -1,0 +1,63 @@
+// Write a Date class with day, month, and year as private members. Implement: Constructor
+// with default date (1/1/2000), Getter and setter for each member with validation,
+// displayDate() const function.
+
+#include <iostream>
+using namespace std;
+
+class Date{
+    int day, month, year;
+    public:
+    Date(int d = 1, int m = 1, int y = 2000){
+        // day = d;
+        // month = m;
+        // year = y;
+        setDay( d);
+        setMonth( m);
+        setYear( y);
+    }
+    void setDay(int d)
+    {
+        if(d<1 || d>31)
+           { cout<<"invalid\n"; 
+           day = 1; }
+           else{
+        day = d; }
+    }
+    void setMonth(int m)
+    {
+        if(m<1 || m>12)
+            { cout<<"invalid\n";
+            month = 1; }
+            else{
+        month = m; }
+    }
+    void setYear(int y)
+    {
+        if(y<2000)
+            { cout<<"invalid\n";
+            year = 2000;}
+            else
+            
+         {year = y;
+}    }
+    int getDay() const { return day;}
+    int getMonth() const { return month;}
+    int getYear() const { return year;}
+    void displayDate() const 
+    {
+        cout<<getDay()<<"/"<<getMonth()<<"/"<<getYear()<<"\n";
+    }
+    
+};
+int main() {
+
+Date d1(11, 4, 2001);
+d1.displayDate();  
+Date d2;           
+d2.displayDate();  
+Date d3(32, 13, 1999); 
+d3.displayDate();  
+
+    return 0;
+}
